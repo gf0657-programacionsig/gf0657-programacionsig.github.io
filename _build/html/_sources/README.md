@@ -84,7 +84,7 @@ git init
 git add .
 git commit -m "Commit inicial"
 git branch -M main
-git remote add origin https://github.com/gf0657-programacionsig/2022-ii.git
+git remote add origin git@github.com:gf0657-programacionsig/2022-ii.git
 git push -u origin main
 
 # Creación del branch gh-pages (para manejar los archivos HTML publicados)
