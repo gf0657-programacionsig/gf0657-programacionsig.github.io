@@ -76,7 +76,7 @@ jupyter-book create 2024-ii
 # Generación de archivos HTML (en el subdirectorio _build/html)
 jupyter-book build 2024-ii
 
-# En este punto, se crea en GitHub el repositorio 2022-ii
+# En este punto, se crea en GitHub el repositorio 2024-ii
 
 # Configuración del repositorio local y su branch main (para manejar los archivos fuente)
 cd 2024-ii
@@ -84,7 +84,7 @@ git init
 git add .
 git commit -m "Commit inicial"
 git branch -M main
-git remote add origin git@github.com:gf0657-programacionsig/2022-ii.git
+git remote add origin git@github.com:gf0657-programacionsig/2024-ii.git
 git push -u origin main
 
 # Creación del branch gh-pages (para manejar los archivos HTML publicados)
