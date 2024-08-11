@@ -2,7 +2,7 @@
 
 1. Creación de un ambiente Conda.
 2. Creación del Jupyter Book principal: gf0657-programacionsig.github.io
-3. Creación de un Jupyter Book para cada curso, por ejemplo: 2022-ii, accesible en https://gf0657-programacionsig.github.io/2022-ii/
+3. Creación de un Jupyter Book para cada curso, por ejemplo: 2024-ii, accesible en https://gf0657-programacionsig.github.io/2024-ii/
 4. Publicación de modificaciones.
 
 ## 1. Creación de un ambiente Conda
@@ -12,13 +12,13 @@
 conda update conda
 
 # Borrado del ambiente (si es que existe)
-# conda remove -n gf0657 --all
+# conda remove -n gf0657-2024-ii --all
 
 # Creación del ambiente
-conda create -n gf0657
+conda create -n gf0657-2024-ii
 
 # Activación del ambiente
-conda activate gf0657
+conda activate gf0657-2024-ii
 
 # Configuración del ambiente
 conda config --env --add channels conda-forge
@@ -27,8 +27,8 @@ conda config --env --set channel_priority strict
 # Instalación de mamba
 conda install mamba
 
-# Instalación de módulos requeridos
-mamba install git python jupyter jupyterlab jupyter-book ghp-import numpy pandas matplotlib plotly gdal fiona shapely geopandas rasterio folium streamlit
+# Instalación de módulos
+mamba install git python jupyter jupyter-book ghp-import numpy pandas matplotlib seaborn plotly gdal fiona shapely geopandas pyarrow duckdb rasterio xarray rioxarray earthpy xarray-spatial pystac-client python-graphviz folium leafmap lonboard streamlit
 
 # Desactivación del ambiente
 conda deactivate
@@ -37,7 +37,7 @@ conda deactivate
 ## 2. Creación del Jupyter Book principal y publicación inicial del sitio web en GitHub Pages
 
 ```shell
-conda activate gf0657
+conda activate gf0657-2024-ii
 
 # Creación del Jupyter Book con una plantilla inicial
 jupyter-book create gf0657-programacionsig.github.io
@@ -68,18 +68,18 @@ conda deactivate
 ## 3. Creación de un Jupyter Book para cada curso y publicación inicial del sitio web en GitHub Pages
 
 ```shell
-conda activate gf0657
+conda activate gf0657-2024-ii
 
 # Creación del Jupyter Book con una plantilla inicial
-jupyter-book create 2022-ii
+jupyter-book create 2024-ii
 
 # Generación de archivos HTML (en el subdirectorio _build/html)
-jupyter-book build 2022-ii
+jupyter-book build 2024-ii
 
 # En este punto, se crea en GitHub el repositorio 2022-ii
 
 # Configuración del repositorio local y su branch main (para manejar los archivos fuente)
-cd 2022-ii
+cd 2024-ii
 git init
 git add .
 git commit -m "Commit inicial"
@@ -91,7 +91,7 @@ git push -u origin main
 ghp-import -n -p -f _build/html
 
 # En este punto, se configura el repositorio para buscar los archivos de GH Pages en la rama gh-pages
-# El sitio debe estar disponible en https://gf0657-programacionsig.github.io/2022-ii/
+# El sitio debe estar disponible en https://gf0657-programacionsig.github.io/2024-ii/
 ```
 
 ## 4. Publicación de modificaciones
@@ -111,4 +111,3 @@ git push
 # Aplicación de cambios en el branch gh-pages
 ghp-import -n -p -f _build/html
 ```
-

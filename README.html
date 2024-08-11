@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -393,7 +393,7 @@ document.write(`
 <ol class="arabic simple">
 <li><p>Creación de un ambiente Conda.</p></li>
 <li><p>Creación del Jupyter Book principal: <a class="reference external" href="http://gf0657-programacionsig.github.io">gf0657-programacionsig.github.io</a></p></li>
-<li><p>Creación de un Jupyter Book para cada curso, por ejemplo: 2022-ii, accesible en <a class="reference external" href="https://gf0657-programacionsig.github.io/2022-ii/">https://gf0657-programacionsig.github.io/2022-ii/</a></p></li>
+<li><p>Creación de un Jupyter Book para cada curso, por ejemplo: 2024-ii, accesible en <a class="reference external" href="https://gf0657-programacionsig.github.io/2024-ii/">https://gf0657-programacionsig.github.io/2024-ii/</a></p></li>
 <li><p>Publicación de modificaciones.</p></li>
 </ol>
 <section id="creacion-de-un-ambiente-conda">
@@ -402,13 +402,13 @@ document.write(`
 conda<span class="w"> </span>update<span class="w"> </span>conda
 
 <span class="c1"># Borrado del ambiente (si es que existe)</span>
-<span class="c1"># conda remove -n gf0657 --all</span>
+<span class="c1"># conda remove -n gf0657-2024-ii --all</span>
 
 <span class="c1"># Creación del ambiente</span>
-conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>gf0657
+conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>gf0657-2024-ii
 
 <span class="c1"># Activación del ambiente</span>
-conda<span class="w"> </span>activate<span class="w"> </span>gf0657
+conda<span class="w"> </span>activate<span class="w"> </span>gf0657-2024-ii
 
 <span class="c1"># Configuración del ambiente</span>
 conda<span class="w"> </span>config<span class="w"> </span>--env<span class="w"> </span>--add<span class="w"> </span>channels<span class="w"> </span>conda-forge
@@ -417,8 +417,8 @@ conda<span class="w"> </span>config<span class="w"> </span>--env<span class="w">
 <span class="c1"># Instalación de mamba</span>
 conda<span class="w"> </span>install<span class="w"> </span>mamba
 
-<span class="c1"># Instalación de módulos requeridos</span>
-mamba<span class="w"> </span>install<span class="w"> </span>git<span class="w"> </span>python<span class="w"> </span>jupyter<span class="w"> </span>jupyterlab<span class="w"> </span>jupyter-book<span class="w"> </span>ghp-import<span class="w"> </span>numpy<span class="w"> </span>pandas<span class="w"> </span>matplotlib<span class="w"> </span>plotly<span class="w"> </span>gdal<span class="w"> </span>fiona<span class="w"> </span>shapely<span class="w"> </span>geopandas<span class="w"> </span>rasterio<span class="w"> </span>folium<span class="w"> </span>streamlit
+<span class="c1"># Instalación de módulos</span>
+mamba<span class="w"> </span>install<span class="w"> </span>git<span class="w"> </span>python<span class="w"> </span>jupyter<span class="w"> </span>jupyter-book<span class="w"> </span>ghp-import<span class="w"> </span>numpy<span class="w"> </span>pandas<span class="w"> </span>matplotlib<span class="w"> </span>seaborn<span class="w"> </span>plotly<span class="w"> </span>gdal<span class="w"> </span>fiona<span class="w"> </span>shapely<span class="w"> </span>geopandas<span class="w"> </span>pyarrow<span class="w"> </span>duckdb<span class="w"> </span>rasterio<span class="w"> </span>xarray<span class="w"> </span>rioxarray<span class="w"> </span>earthpy<span class="w"> </span>xarray-spatial<span class="w"> </span>pystac-client<span class="w"> </span>python-graphviz<span class="w"> </span>folium<span class="w"> </span>leafmap<span class="w"> </span>lonboard<span class="w"> </span>streamlit
 
 <span class="c1"># Desactivación del ambiente</span>
 conda<span class="w"> </span>deactivate
@@ -427,7 +427,7 @@ conda<span class="w"> </span>deactivate
 </section>
 <section id="creacion-del-jupyter-book-principal-y-publicacion-inicial-del-sitio-web-en-github-pages">
 <h2>2. Creación del Jupyter Book principal y publicación inicial del sitio web en GitHub Pages<a class="headerlink" href="#creacion-del-jupyter-book-principal-y-publicacion-inicial-del-sitio-web-en-github-pages" title="Link to this heading">#</a></h2>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>gf0657
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>gf0657-2024-ii
 
 <span class="c1"># Creación del Jupyter Book con una plantilla inicial</span>
 jupyter-book<span class="w"> </span>create<span class="w"> </span>gf0657-programacionsig.github.io
@@ -458,18 +458,18 @@ conda<span class="w"> </span>deactivate
 </section>
 <section id="creacion-de-un-jupyter-book-para-cada-curso-y-publicacion-inicial-del-sitio-web-en-github-pages">
 <h2>3. Creación de un Jupyter Book para cada curso y publicación inicial del sitio web en GitHub Pages<a class="headerlink" href="#creacion-de-un-jupyter-book-para-cada-curso-y-publicacion-inicial-del-sitio-web-en-github-pages" title="Link to this heading">#</a></h2>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>gf0657
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>gf0657-2024-ii
 
 <span class="c1"># Creación del Jupyter Book con una plantilla inicial</span>
-jupyter-book<span class="w"> </span>create<span class="w"> </span><span class="m">2022</span>-ii
+jupyter-book<span class="w"> </span>create<span class="w"> </span><span class="m">2024</span>-ii
 
 <span class="c1"># Generación de archivos HTML (en el subdirectorio _build/html)</span>
-jupyter-book<span class="w"> </span>build<span class="w"> </span><span class="m">2022</span>-ii
+jupyter-book<span class="w"> </span>build<span class="w"> </span><span class="m">2024</span>-ii
 
 <span class="c1"># En este punto, se crea en GitHub el repositorio 2022-ii</span>
 
 <span class="c1"># Configuración del repositorio local y su branch main (para manejar los archivos fuente)</span>
-<span class="nb">cd</span><span class="w"> </span><span class="m">2022</span>-ii
+<span class="nb">cd</span><span class="w"> </span><span class="m">2024</span>-ii
 git<span class="w"> </span>init
 git<span class="w"> </span>add<span class="w"> </span>.
 git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Commit inicial&quot;</span>
@@ -481,7 +481,7 @@ git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span
 ghp-import<span class="w"> </span>-n<span class="w"> </span>-p<span class="w"> </span>-f<span class="w"> </span>_build/html
 
 <span class="c1"># En este punto, se configura el repositorio para buscar los archivos de GH Pages en la rama gh-pages</span>
-<span class="c1"># El sitio debe estar disponible en https://gf0657-programacionsig.github.io/2022-ii/</span>
+<span class="c1"># El sitio debe estar disponible en https://gf0657-programacionsig.github.io/2024-ii/</span>
 </pre></div>
 </div>
 </section>
